@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { SkyAppLocaleProvider } from '@skyux/i18n';
 import { SkyThemeService } from '@skyux/theme';
 
@@ -11,7 +12,12 @@ import { LookupAsyncDemoModule } from './lookup-async-demo.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, LookupAsyncDemoModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot([]),
+    LookupAsyncDemoModule,
+  ],
   providers: [
     SkyThemeService,
     {

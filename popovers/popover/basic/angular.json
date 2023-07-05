@@ -8,11 +8,6 @@
   "projects": {
     "popovers-popover-basic": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -23,36 +18,22 @@
             "outputPath": "dist/popovers-popover-basic",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [],
+            "polyfills": ["zone.js", "@skyux/packages/polyfills"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [],
             "styles": ["src/styles.scss"],
-            "scripts": []
-          },
-          "configurations": {
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
-            }
-          },
-          "defaultConfiguration": "production"
+            "scripts": [],
+            "buildOptimizer": false,
+            "optimization": false,
+            "allowedCommonJsDependencies": ["fontfaceobserver", "@skyux/icons"]
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "popovers-popover-basic:build:production"
-            },
-            "development": {
-              "browserTarget": "popovers-popover-basic:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
+          "options": {
+            "browserTarget": "popovers-popover-basic:build"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -63,10 +44,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing",
+              "@skyux/packages/polyfills"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [],
             "styles": ["src/styles.scss"],
             "scripts": []
           }

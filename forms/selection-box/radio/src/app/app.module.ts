@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { SkyAppLocaleProvider } from '@skyux/i18n';
 import { SkyThemeService } from '@skyux/theme';
 
@@ -11,7 +12,12 @@ import { SkySelectionBoxDemoModule } from './selection-box-demo.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, SkySelectionBoxDemoModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot([]),
+    SkySelectionBoxDemoModule,
+  ],
   providers: [
     SkyThemeService,
     {
