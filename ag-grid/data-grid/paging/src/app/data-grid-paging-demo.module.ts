@@ -17,13 +17,13 @@ import { DataGridPagingDemoComponent } from './data-grid-paging-demo.component';
   declarations: [DataGridPagingDemoComponent],
   exports: [DataGridPagingDemoComponent],
   imports: [
-    AgGridModule,
     CommonModule,
-    SkyAgGridModule,
-    SkyDataManagerModule,
-    SkyPagingModule,
-    SkySearchModule,
     SkyToolbarModule,
+    SkySearchModule,
+    SkyDataManagerModule,
+    SkyAgGridModule,
+    AgGridModule,
+    SkyPagingModule,
   ],
   providers: [SkyDataManagerService],
 })
